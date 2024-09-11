@@ -1,14 +1,18 @@
 import { defaultStyles } from '@/styles'
 import { Stack } from 'expo-router'
-import { View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { StackScreenWithSearchBar } from '@/constants/layout'
 
 const SongsScreenLayout = () => {
 	return (
-		<View style={defaultStyles.container}>
+		<SafeAreaView style={{ ...defaultStyles.container, flex: 1 }}>
 			<Stack>
-				<Stack.Screen name="index" options={{ headerTitle: 'Songs' }} />
+				<Stack.Screen
+					name="index"
+					options={{ ...StackScreenWithSearchBar, headerTitle: 'Songs' }}
+				/>
 			</Stack>
-		</View>
+		</SafeAreaView>
 	)
 }
 
