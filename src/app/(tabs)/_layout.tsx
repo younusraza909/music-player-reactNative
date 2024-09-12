@@ -24,7 +24,8 @@ const TabsNavigation = () => {
 				},
 				tabBarBackground: () => (
 					<BlurView
-						intensity={95}
+						experimentalBlurMethod="dimezisBlurView"
+						intensity={40}
 						style={{
 							...StyleSheet.absoluteFillObject,
 							overflow: 'hidden',
