@@ -1,4 +1,6 @@
-export const trackTitleFilter = (title: string) => (track: any) =>
+import { Track } from 'react-native-track-player'
+
+export const trackTitleFilter = (title: string) => (track: Track) =>
 	track.title?.toLowerCase().includes(title.toLowerCase())
 
 // export const artistNameFilter = (name: string) => (artist: Artist) =>
