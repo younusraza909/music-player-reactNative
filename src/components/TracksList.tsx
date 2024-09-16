@@ -3,16 +3,18 @@ import library from '@/assets/data/library.json'
 import { TrackListItem } from './TrackListItem'
 import { utilsStyles } from '@/styles'
 
-export type TrackListProps = Partial<FlatListProps<unknown>>
+export type TrackListProps = Partial<FlatListProps<unknown>> & {
+	tracks: any
+}
 
 const ItemDivider = () => {
 	return <View style={{ ...utilsStyles.itemSeparator, marginVertical: 9, marginLeft: 60 }} />
 }
 
-const TracksList = ({ ...flatListProps }: TrackListProps) => {
+const TracksList = ({ tracks, ...flatListProps }: TrackListProps) => {
 	return (
 		<FlatList
-			data={library}
+			data={tracks}
 			renderItem={({ item: track }) => (
 				<TrackListItem
 					track={{
