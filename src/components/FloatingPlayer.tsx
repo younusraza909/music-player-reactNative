@@ -14,9 +14,7 @@ export const FloatingPlayer = ({ style }: ViewProps) => {
 	const activeTrack = useActiveTrack()
 	const lastActiveTrack = useLastActiveTrack()
 
-	const displayedTrack = activeTrack ?? {
-		title: 'This is just a song',
-	}
+	const displayedTrack = activeTrack ?? lastActiveTrack
 
 	const handlePress = () => {
 		// router.navigate('/player')
