@@ -12,10 +12,15 @@ const ItemDivider = () => {
 }
 
 const TracksList = ({ tracks, ...flatListProps }: TrackListProps) => {
+	const handleTrackSelect = (track: Track) => {
+		console.log('track', track)
+	}
 	return (
 		<FlatList
 			data={tracks}
-			renderItem={({ item: track }) => <TrackListItem track={track} />}
+			renderItem={({ item: track }) => (
+				<TrackListItem track={track} onTrackSelect={handleTrackSelect} />
+			)}
 			ItemSeparatorComponent={ItemDivider}
 			ListFooterComponent={ItemDivider}
 			{...flatListProps}
